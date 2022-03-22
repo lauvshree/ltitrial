@@ -1,0 +1,6 @@
+html
+  body
+    form(method="POST", target="_blank" action=launch_url)
+      each key, value in data
+        input(type="hidden", name=value, value=key)
+      button Launch CC Labs

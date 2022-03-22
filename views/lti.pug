@@ -1,0 +1,12 @@
+html
+  head
+    link(rel="stylesheet", href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/default.min.css")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js")
+  body
+    script
+      include highlight.js
+    h1 LTI Consumer Payload from Incoming Launch Request
+    h2 Headers
+    pre.code(class="language-javascript") #{headers}
+    h2 Body
+    pre.code(class="language-javascript") #{body}

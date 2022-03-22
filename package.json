@@ -1,0 +1,19 @@
+{
+  "name": "monocle",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.ibm.com:dswb/monocle.git",
+  "author": "Michael Lin <michael.lin1@ibm.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.16.4",
+    "faker": "^4.1.0",
+    "oauth-1.0a": "^2.2.4",
+    "pug": "^2.0.3"
+  }
+}
