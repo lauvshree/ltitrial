@@ -1,12 +1,10 @@
 const express = require('express');
-// const crypto = require('crypto');
-// const OAuth = require('oauth-1.0a');
-// const bodyParser = require('body-parser');
 
 const lti = require('ims-lti');
 
 // MemoryStore shouldn't be used in production. Timestamps must be valid within a 5 minute grace period.
 const nonceStore = new lti.Stores.MemoryStore();
+const router = express.Router();
 
 require('dotenv').config();
 
@@ -17,20 +15,9 @@ const {
   PORT,
 } = process.env;
 
-// const oauth = OAuth({
-//   consumer: { key: LTI_CLIENT_KEY, secret: LTI_CLIENT_SECRET},
-//   signature_method: 'HMAC-SHA1',
-//   hash_function(base_string, key) {
-//     return crypto.createHmac('sha1', key).update(base_string).digest('base64');
-//   }
-// });
-
 const app = express();
 
 app.set('view engine', 'pug');
-
-
-
 
 router.post('/', async (req, res, next) => {
     const oauthReqest = req.body;
@@ -53,10 +40,6 @@ router.post('/', async (req, res, next) => {
           lis_person_contact_email_primary: learner_email
         } = provider.body;
   
-        // Do something with passed params (e.g. trigger cloud function)
-  
-        // Redirect learner or you could just render a page
-//         return res.redirect(301, URL_FOR_LEARNER_TO_SEE);
         res.render('success.pug', {
           full_name,
           learner_email
